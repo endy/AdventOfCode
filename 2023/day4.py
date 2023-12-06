@@ -31,7 +31,7 @@ def get_numbers(line):
     return winning_numbers, my_numbers
 
 total_value = 0
-with open(r"E:\Projects\AdventOfCode\2023\day4_problem_input.txt", "r") as input_file:
+with open(r"day4_problem_input.txt", "r") as input_file:
     for line in input_file.readlines():
 
         winning_numbers, my_numbers = get_numbers(line)
@@ -41,7 +41,7 @@ with open(r"E:\Projects\AdventOfCode\2023\day4_problem_input.txt", "r") as input
 print(f"Problem 1 Total Value: {total_value}")
 
 cards_to_compute = []
-with open(r"E:\Projects\AdventOfCode\2023\day4_problem_input.txt", "r") as input_file:
+with open(r"day4_problem_input.txt", "r") as input_file:
 
     cards = input_file.readlines()
     cards_to_compute = [i for i in range(len(cards))]
@@ -57,8 +57,6 @@ with open(r"E:\Projects\AdventOfCode\2023\day4_problem_input.txt", "r") as input
         assert card_values[card_index] == 0 or card_values[card_index] == match_count
         card_values[card_index] = match_count
  
-    print(card_values)
-
     for card_index, value in enumerate(card_values):
         inc_count = card_counts[card_index]
 
@@ -70,13 +68,8 @@ with open(r"E:\Projects\AdventOfCode\2023\day4_problem_input.txt", "r") as input
                     break
             inc_count -= 1
 
-    print(card_counts)
-
     total_cards = 0
     for c in card_counts:
         total_cards += c
-    print(len(card_counts))
-    print(len(card_values))
-    print(len(cards))
 
     print(f"Problem 2: Total Value {total_cards}")
